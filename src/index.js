@@ -1,14 +1,8 @@
-// Export all constants
-export * from './_constants';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-// Export console logger and event observer
-export { default as Logger } from './logger';
-export { default as EventObserver } from './events';
-
-export { unserialize, protobuf } from './protobuf';
-export { default as Protocol } from './types/protocol';
-export * from './types/message';
-
-// Export as default AND as named
-export { default as Syft } from './syft';
-export { default } from './syft';
+ReactDOM.render(<App />, document.getElementById('root'));
+serviceWorker.unregister();

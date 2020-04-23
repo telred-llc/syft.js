@@ -1,102 +1,37 @@
 {
-  "name": "@openmined/syft.js",
-  "version": "0.0.0",
-  "description": "A Javascript Syft worker in the browser",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "browser": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OpenMined/syft.js.git"
-  },
-  "keywords": [
-    "syft",
-    "pysyft",
-    "openmined",
-    "open",
-    "mined",
-    "deep",
-    "learning",
-    "private",
-    "javascript",
-    "machine",
-    "learning"
-  ],
-  "author": "OpenMined",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/OpenMined/syft.js/issues"
-  },
-  "homepage": "https://github.com/OpenMined/syft.js#readme",
-  "scripts": {
-    "start": "npm run lint && rollup -cw",
-    "build": "npm run lint && rollup -c",
-    "prepare": "npm run build",
-    "test": "npm run lint && jest --coverage",
-    "test:watch": "npm run lint && jest --watch",
-    "version": "auto-changelog -p && git add CHANGELOG.md",
-    "release": "np",
-    "deploy": "./copy-examples.sh && gh-pages -d tmp && rm -rf tmp",
-    "lint": "eslint ."
-  },
-  "types": "src/types/index.d.ts",
-  "browserslist": "> 0.25%, not dead",
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "collectCoverageFrom": [
-      "**/src/**/*.js"
-    ],
-    "setupFiles": [
-      "<rootDir>/jest-globals.js"
-    ],
-    "globals": {
-      "window": {}
-    }
-  },
+  "name": "enclaveML",
+  "version": "0.0.3",
+  "private": true,
+  "homepage": "https://jamslevy.github.io/enclaveML",
   "dependencies": {
-    "@openmined/threepio": "github:openmined/threepio",
-    "long": "^4.0.0",
-    "syft-proto": "git+https://github.com/OpenMined/syft-proto.git#v0.2.9.a2"
+    "@tensorflow-models/coco-ssd": "1.0.1",
+    "@tensorflow/tfjs": "1.0.4",
+    "antd": "^3.20.1",
+    "gh-pages": "^2.0.1",
+    "highcharts": "7.0.3",
+    "js-datasets-iris": "1.0.4",
+    "react": "16.8.3",
+    "react-canvas-draw": "1.0.1-hotfix.4",
+    "react-dom": "16.8.3",
+    "react-router-dom": "5.0.0",
+    "react-scripts": "2.1.5",
+    "react-webcam": "1.1.1"
   },
-  "peerDependencies": {
-    "@tensorflow/tfjs-core": "^1.2.5"
+  "scripts": {
+    "start": "node node_modules/react-scripts/scripts/start.js",
+    "build": "node node_modules/react-scripts/scripts/build.js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "devDependencies": {
-    "@babel/core": "^7.8.6",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/preset-env": "^7.8.6",
-    "@babel/runtime": "^7.8.4",
-    "@joseph184/rollup-plugin-node-builtins": "^2.1.4",
-    "@tensorflow/tfjs-core": "^1.2.5",
-    "auto-changelog": "^1.16.2",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^24.9.0",
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "gh-pages": "^2.2.0",
-    "husky": "^3.1.0",
-    "jest": "^24.9.0",
-    "mock-socket": "^9.0.3",
-    "np": "^5.2.1",
-    "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.1",
-    "regenerator-runtime": "^0.13.3",
-    "rollup": "^1.32.0",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-filesize": "^6.2.1",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.2"
-  }
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
